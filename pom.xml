@@ -29,19 +29,19 @@
             <scope>test</scope>
         </dependency>
 
-<!--        &lt;!&ndash; Selenium &ndash;&gt;-->
-<!--        <dependency>-->
-<!--            <groupId>org.seleniumhq.selenium</groupId>-->
-<!--            <artifactId>selenium-java</artifactId>-->
-<!--            <version>4.18.1</version>-->
-<!--        </dependency>-->
+        <!-- Selenium -->
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-java</artifactId>
+            <version>4.18.1</version>
+        </dependency>
 
-<!--        &lt;!&ndash; WebDriverManager (tự động tải ChromeDriver) &ndash;&gt;-->
-<!--        <dependency>-->
-<!--            <groupId>io.github.bonigarcia</groupId>-->
-<!--            <artifactId>webdrivermanager</artifactId>-->
-<!--            <version>5.7.0</version>-->
-<!--        </dependency>-->
+        <!-- WebDriverManager (tự động tải ChromeDriver) -->
+        <dependency>
+            <groupId>io.github.bonigarcia</groupId>
+            <artifactId>webdrivermanager</artifactId>
+            <version>5.7.0</version>
+        </dependency>
 <!--        lombok-->
         <dependency>
             <groupId>org.projectlombok</groupId>
