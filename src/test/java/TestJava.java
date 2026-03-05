@@ -4,7 +4,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class TestJava {
 
-    private TinhTongN tinhTongN;
+    private TinhTongService tinhTongService;
 
     @BeforeAll
     static void setupAll() {
@@ -13,7 +13,7 @@ public class TestJava {
 
     @BeforeEach
     void setUp() {
-        tinhTongN = new TinhTongN();
+        tinhTongService = new TinhTongService();
         System.out.println("Thực thi trước mỗi test script");
     }
     //SumTest
@@ -21,27 +21,27 @@ public class TestJava {
     @Test
     void test1_HopLe() {
         int[] arr = {1,2,3,4,5};
-        assertEquals(15, tinhTongN.tinhTong(arr));
+        assertEquals(15, tinhTongService.tinhTong(arr));
     }
 
     @Test
     void test2_MangRong() {
         int[] arr = {};
         assertThrows(IllegalArgumentException.class, () -> {
-            tinhTongN.tinhTong(arr);
+            tinhTongService.tinhTong(arr);
         });
     }
 
     @Test
     void test3_MangNull() {
         assertThrows(IllegalArgumentException.class, () -> {
-            tinhTongN.tinhTong(null);
+            tinhTongService.tinhTong(null);
         });
     }
 
     @AfterEach
     void tearDown() {
-        tinhTongN = null;
+        tinhTongService = null;
         System.out.println("Thực thi sau mỗi lần test script");
     }
 

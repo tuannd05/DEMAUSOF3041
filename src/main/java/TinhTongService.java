@@ -1,4 +1,4 @@
-public class NhanVien {
+public class TinhTongService {
     public int tinhTong(int[] arr) {
         if (arr == null || arr.length == 0) {
             throw new IllegalArgumentException("Mang rong va null");
