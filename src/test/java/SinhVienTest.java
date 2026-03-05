@@ -1,14 +1,21 @@
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
+
 import static org.junit.jupiter.api.Assertions.*;
+
 public class SinhVienTest {
+
     private SinhVienService service;
+
+    @BeforeAll
+    static void setupAll() {
+        System.out.println("Thực thi một lần duy nhất trước tất cả các test script");
+    }
 
     @BeforeEach
     void setUp() {
         service = new SinhVienService();
+        System.out.println("Thực thi trước mỗi test script");
     }
-
     @Test
     void testThemHopLe() {
         SinhVien sv = new SinhVien("SV01","Tuấn",20,8.5f,1,"CNTT");
@@ -39,10 +46,22 @@ public class SinhVienTest {
 
     @Test
     void testSuaKhongTonTai() {
-        SinhVien sv = new SinhVien("SV99","Huy",20,8.5f,1,"CNTT");
-
+        SinhVien sv = new SinhVien("SV01","Huy",20,8.5f,1,"CNTT");
+        service.them(sv);
+        SinhVien svMoi = new SinhVien("SV02","Huy",20,8.5f,1,"CNTT");
         assertThrows(RuntimeException.class, () -> {
-            service.sua(sv);
+            service.sua(svMoi);
         });
+    }
+
+    @AfterEach
+    void tearDown() {
+        service = null;
+        System.out.println("Thực thi sau mỗi lần test script");
+    }
+
+    @AfterAll
+    static void tearDownAll() {
+        System.out.println("Thực thi một lần duy nhất sau khi hoàn thành tất cả test script");
     }
 }
