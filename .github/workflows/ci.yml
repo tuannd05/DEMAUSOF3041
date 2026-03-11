@@ -1,16 +1,24 @@
 name: Java CI
+
 on:
   push:
     branches: [ main ]
+
 jobs:
   build:
     runs-on: ubuntu-latest
+
     steps:
       - uses: actions/checkout@v4
+
       - name: Setup Java
         uses: actions/setup-java@v4
         with:
           distribution: temurin
           java-version: 17
+
+      - name: Setup Chrome
+        uses: browser-actions/setup-chrome@v1
+
       - name: Build and Test
         run: mvn clean test
